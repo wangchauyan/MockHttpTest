@@ -5,7 +5,7 @@ And use Mock Http Interceptor to mock the http response
 
 ## Getting Started
 
-Please clone this repo and open it in Android Studio (above 3.1.3, with Kotlin support)
+Please clone this repo and open it in Android Studio (above 3.3.1, with Kotlin support)
 
 ## Versioning
 
