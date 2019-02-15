@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">MockHttp</string>
+    <string name="title_user_detail">User Detail</string>
+
+    <string name="userlist_activity_loading">Loading ...</string>
+    <string name="userlist_activity_list_title">Users</string>
+    <string name="userlist_activity_list_item_staff">STAFF</string>
+</resources>
