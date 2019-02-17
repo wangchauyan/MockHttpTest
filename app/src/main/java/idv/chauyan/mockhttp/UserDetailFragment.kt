@@ -68,7 +68,7 @@ class UserDetailFragment : Fragment() {
             /**
              * query user detail information by passing selected user name
              */
-            val respository = NetworkRepository.getInstance()
+            val respository = NetworkRepository.getInstance(activity!!)
             comDisposable.add(
                     respository
                             .getUserDetail(queryUserName!!)
@@ -89,6 +89,12 @@ class UserDetailFragment : Fragment() {
         }
     }
 
+
+    override fun onDestroy() {
+        comDisposable.dispose()
+        comDisposable.clear()
+        super.onDestroy()
+    }
 
     /**
      * setup user detail information from github

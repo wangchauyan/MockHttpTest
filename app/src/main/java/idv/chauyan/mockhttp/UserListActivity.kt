@@ -78,6 +78,7 @@ class UserListActivity : AppCompatActivity() {
     }
 
     override fun onDestroy() {
+        comDisposable.dispose()
         comDisposable.clear()
         super.onDestroy()
     }

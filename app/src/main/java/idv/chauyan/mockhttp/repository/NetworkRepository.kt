@@ -26,6 +26,6 @@ class RetrofitRepository(val apiService : GithubApiService) {
 object NetworkRepository {
 
     fun getInstance(context: Context): RetrofitRepository {
-        return RetrofitRepository(GithubApiService.create(true, context))
+        return RetrofitRepository(GithubApiService.create(false, context))
     }
 }
