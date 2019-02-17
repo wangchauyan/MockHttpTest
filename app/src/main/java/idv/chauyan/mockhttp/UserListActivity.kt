@@ -92,14 +92,14 @@ class UserListActivity : AppCompatActivity() {
          */
         fab.setOnClickListener { view ->
             Snackbar.make(view, "Email me if you have any questions", Snackbar.LENGTH_LONG)
-                    .setAction("Email", { _ ->
+                    .setAction("Email") {
                         val emailIntent = Intent(Intent.ACTION_SENDTO)
                         emailIntent.data = Uri.parse("mailto:") // only email apps should handle this
                         emailIntent.putExtra(Intent.EXTRA_SUBJECT,"Questions about this app...")
                         if (emailIntent.resolveActivity(packageManager) != null) {
                             startActivity(emailIntent)
                         }
-                    }).show()
+                    }.show()
         }
 
         /**
@@ -140,7 +140,7 @@ class UserListActivity : AppCompatActivity() {
      * query user list from github
      */
     private fun queryUserList(bRefresh:Boolean) {
-        val respository = NetworkRepository.getInstance()
+        val respository = NetworkRepository.getInstance(this)
         comDisposable.add(
                 respository
                         .getUsers(since, per_page)

@@ -1,5 +1,6 @@
 package idv.chauyan.mockhttp.repository
 
+import android.content.Context
 import idv.chauyan.mockhttp.apis.GithubApiService
 import idv.chauyan.mockhttp.model.User
 import idv.chauyan.mockhttp.model.UserDetail
@@ -24,7 +25,7 @@ class RetrofitRepository(val apiService : GithubApiService) {
 
 object NetworkRepository {
 
-    fun getInstance(): RetrofitRepository {
-        return RetrofitRepository(GithubApiService.Factory.create())
+    fun getInstance(context: Context): RetrofitRepository {
+        return RetrofitRepository(GithubApiService.create(true, context))
     }
 }
